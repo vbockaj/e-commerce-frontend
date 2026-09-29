@@ -327,3 +327,108 @@ main h1 {
     grid-column: auto;
   }
 }
+
+.nav-link {
+  color: #1f2a24;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.wizard {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.wizard-progress {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.wizard-bar {
+  height: 6px;
+  background: #e6dfd3;
+  border-radius: 999px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.wizard-bar-fill {
+  height: 100%;
+  background: #1f2a24;
+  transition: width 0.25s;
+}
+
+.wizard-step {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wizard-step legend {
+  padding: 0;
+}
+
+.wizard-hint {
+  color: #6b7280;
+  margin: 0 0 1rem;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  border: 2px solid #e6dfd3;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: left;
+  color: #1c1c28;
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: #1f2a24;
+}
+
+.option--selected {
+  border-color: #1f2a24;
+  background: #f0ebe1;
+}
+
+.option--column {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.option-emoji {
+  font-size: 1.5rem;
+}
+
+.option-hint {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.wizard-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

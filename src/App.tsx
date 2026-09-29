@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import Builder from "./pages/Builder";
+import Setup from "./pages/Setup";
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/build" element={<Builder />} />
+          <Route path="/setup" element={<Setup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -9,6 +9,10 @@ export default function Header() {
       <Link to="/" className="logo">
         <img src="/nook-logo.png" alt="NOOK home" className="logo-icon" />
       </Link>
+      <nav>
+        <Link to="/build" className="nav-link">Builder</Link>
+        <Link to="/setup" className="nav-link">Setup</Link>
+      </nav>
       <Link to="/cart" className="cart-link" aria-label={`Cart, ${totalItems} items`}>
         <svg
           width="26"
