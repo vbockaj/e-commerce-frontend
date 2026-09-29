@@ -7,7 +7,11 @@ export default function Header() {
   return (
     <header className="header">
       <Link to="/" className="logo">
-        <img src="/nook-logo.png" alt="NOOK home" className="logo-icon" />
+        <img
+        src={`${import.meta.env.BASE_URL}nook-logo.png`}
+        alt="NOOK home"
+        className="logo-icon"
+        />
       </Link>
       <nav>
         <Link to="/build" className="nav-link">Builder</Link>
