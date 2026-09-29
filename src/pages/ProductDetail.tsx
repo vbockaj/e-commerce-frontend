@@ -41,7 +41,7 @@ export default function ProductDetail() {
       <section className="detail">
         <ProductImage product={product} size="lg" />
         <div className="detail-info">
-          <p className="category">{product.category}</p>
+          <p className="category">{product.category.replace("-", " ")}</p>
           <h1>{product.title}</h1>
           <p className="price">{formatPrice(product.price)}</p>
           <p>{product.description}</p>
