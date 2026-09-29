@@ -19,10 +19,13 @@ export default function Home() {
   if (error) return <p className="status">Something went wrong: {error}</p>;
 
   return (
-    <div className="grid">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
+    <section>
+      <h1>Shop all products</h1>
+      <div className="grid">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </section>
   );
 }

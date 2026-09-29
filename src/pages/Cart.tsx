@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../cart/useCart";
+import ProductImage from "../components/ProductImage";
+import { formatPrice } from "../utils/format";
 
 export default function Cart() {
   const { items, remove, setQuantity, clear, totalPrice } = useCart();
@@ -19,10 +21,10 @@ export default function Cart() {
       <ul className="cart-list">
         {items.map(({ product, quantity }) => (
           <li key={product.id} className="cart-item">
-            <img src={product.image} alt={product.title} />
+            <ProductImage product={product} size="sm" />
             <div className="cart-item-info">
               <Link to={`/product/${product.id}`}>{product.title}</Link>
-              <p>${product.price.toFixed(2)}</p>
+              <p>{formatPrice(product.price)}</p>
             </div>
             <div className="quantity">
               <button
@@ -41,7 +43,7 @@ export default function Cart() {
                 +
               </button>
             </div>
-            <p className="line-total">${(product.price * quantity).toFixed(2)}</p>
+            <p className="line-total">{formatPrice(product.price * quantity)}</p>
             <button type="button" className="remove" onClick={() => remove(product.id)}>
               Remove
             </button>
@@ -50,7 +52,7 @@ export default function Cart() {
       </ul>
       <div className="cart-summary">
         <p>
-          Total: <strong>${totalPrice.toFixed(2)}</strong>
+          Total: <strong>{formatPrice(totalPrice)}</strong>
         </p>
         <button type="button" className="btn btn-secondary" onClick={clear}>
           Clear cart

@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { getProduct } from "../api/products";
 import { useCart } from "../cart/useCart";
+import ProductImage from "../components/ProductImage";
+import { formatPrice } from "../utils/format";
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -37,13 +39,13 @@ export default function ProductDetail() {
     <div>
       <Link to="/" className="back-link">← Back to products</Link>
       <section className="detail">
-        <img src={product.image} alt={product.title} />
+        <ProductImage product={product} size="lg" />
         <div className="detail-info">
           <p className="category">{product.category}</p>
           <h1>{product.title}</h1>
-          <p className="price">${product.price.toFixed(2)}</p>
+          <p className="price">{formatPrice(product.price)}</p>
           <p>{product.description}</p>
-          <button type="button" className="btn" onClick={handleAdd}>
+          <button type="button" className="btn" onClick={handleAdd} aria-live="polite">
             {added ? "Added ✓" : "Add to cart"}
           </button>
         </div>
